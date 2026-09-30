@@ -1,5 +1,5 @@
 import * as readline from 'readline';
-import { add, sub, mul, div } from './modules/math';
+import { add, sub, mul, div, area, perimetro } from './modules/math';
 
 // Configuração da interface de leitura do terminal
 const rl = readline.createInterface({
@@ -21,18 +21,20 @@ async function menu() {
     console.log("2. Subtração (-)");
     console.log("3. Multiplicação (*)");
     console.log("4. Divisão (/)");
-    console.log("5. Sair");
+    console.log("5. Area retangulo");
+    console.log("6. Perimetro retangulo");
+    console.log("7. Sair");
     
     const opcao = await question("Escolha uma opção (1-5): ");
 
-    if (opcao === "5") {
+    if (opcao === "7") {
       console.log("A sair da aplicação... Até breve!");
       continuar = false;
       rl.close();
       break;
     }
 
-    if (!["1", "2", "3", "4"].includes(opcao)) {
+    if (!["1", "2", "3", "4", "5", "6"].includes(opcao)) {
       console.log("Opção inválida! Tente novamente.");
       continue;
     }
@@ -70,6 +72,14 @@ async function menu() {
         case "4":
           resultado = div(num1, num2);
           console.log(`\n> Resultado: ${num1} / ${num2} = ${resultado}`);
+          break;
+        case "5":
+          resultado = area(num1, num2);
+          console.log(`\n> Area: ${resultado}`);
+          break;
+        case "6":
+          resultado = perimetro(num1, num2);
+          console.log(`\n> Perimetro: ${resultado}`);
           break;
       }
     } catch (error: any) {

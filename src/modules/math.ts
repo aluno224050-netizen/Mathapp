@@ -36,8 +36,16 @@ export function mul(a: number, b: number): number {
  * @returns O quociente da divisão
  */
 export function div(a: number, b: number): number {
-  if (b === 0) {
-    throw new Error("Divisão por zero não é permitida.");
-  }
+//   if (b === 0) {
+//     throw new Error("Divisão por zero não é permitida.");
+//   }
   return a / b;
+}
+
+export function area(c: number, l: number): number {
+  return c * l;
+}
+
+export function perimetro(c: number, l: number): number {
+  return 2 * c + 2 * l;
 }
