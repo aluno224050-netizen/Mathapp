@@ -49,3 +49,11 @@ export function area(c: number, l: number): number {
 export function perimetro(c: number, l: number): number {
   return 2 * c + 2 * l;
 }
+
+export function areac(raio:number): number {
+  return raio * raio * 3.1416;
+}
+
+export function perimetroc(raio:number): number {
+  return 2 * 3.1416 * raio ;
+}
